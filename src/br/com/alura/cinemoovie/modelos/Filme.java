@@ -1,7 +1,7 @@
 package br.com.alura.cinemoovie.modelos;
 
-public class Filme extends Titulo{
-        private String diretor;
+public class Filme extends Titulo {
+    private String diretor;
 
     public String getDiretor() {
         return diretor;

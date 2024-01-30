@@ -2,8 +2,8 @@ package br.com.alura.cinemoovie.modelos;
 
 public class Serie extends Titulo {
     private int temporadas;
-    private  int episodiosPorTemporada;
-    private  boolean ativa;
+    private int episodiosPorTemporada;
+    private boolean ativa;
     private int minutosPorEpisodio;
 
     public int getTemporadas() {
@@ -36,5 +36,10 @@ public class Serie extends Titulo {
 
     public void setMinutosPorEpisodio(int minutosPorEpisodio) {
         this.minutosPorEpisodio = minutosPorEpisodio;
+    }
+
+    @Override
+    public int getDuracaoEmMinutos() {
+        return temporadas * episodiosPorTemporada * minutosPorEpisodio;
     }
 }
