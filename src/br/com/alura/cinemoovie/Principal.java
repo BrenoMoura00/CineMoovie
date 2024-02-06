@@ -10,9 +10,7 @@ import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
-        Filme meuFilme = new Filme();
-        meuFilme.setNome("O poderoso chefão");
-        meuFilme.setAnoDeLancamento(1970);
+        Filme meuFilme = new Filme("O poderoso chefão", 1970);
         meuFilme.setDuracaoEmMinutos(180);
 
         meuFilme.exibeFichaTecnica();
@@ -24,28 +22,31 @@ public class Principal {
         System.out.println("Total de Avaliações: " + meuFilme.getTotalDeAvaliacoes());
         System.out.println(meuFilme.pegaMedia());
 
-        Filme filme2 = new Filme();
-        filme2.setNome("avatar");
-        filme2.setAnoDeLancamento(2023);
+        System.out.println("==============================================================================");
+
+        Filme filme2 = new Filme("avatar",2023);
+
         filme2.setDuracaoEmMinutos(200);
 
-        Serie serie = new Serie();
-        serie.setNome("Grey's Anatomy");
-        serie.setAnoDeLancamento(2006);
+        Serie serie = new Serie("Grey's Anatomy",2006);
         serie.setTemporadas(19);
         serie.setEpisodiosPorTemporada(22);
         serie.setMinutosPorEpisodio(42);
         serie.exibeFichaTecnica();
         System.out.println(serie.getDuracaoEmMinutos() + serie.getTemporadas());
 
+        System.out.println("==============================================================================");
+
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
         calculadora.inclui(meuFilme);
         calculadora.inclui(filme2);
         calculadora.inclui(serie);
-        System.out.println("total de minutos para maratonar: " + calculadora.getTempoTotal());
+        System.out.println("total de minutos para maratonar: " + calculadora.getTempoTotal() + " minutos.");
 
         FiltroRecomendacao filtro = new FiltroRecomendacao();
         filtro.filtra(meuFilme);
+
+        System.out.println("==============================================================================");
 
         Episodio episodio = new Episodio();
         episodio.setNumero(1);
@@ -54,8 +55,8 @@ public class Principal {
         System.out.println(episodio.getSerie());
         filtro.filtra(episodio);
 
-        Filme filmeBreno = new Filme();
-        filmeBreno.setNome("Dogville");
+        Filme filmeBreno = new Filme("Dogville", 2023);
+
         filmeBreno.setDuracaoEmMinutos(200);
         filmeBreno.setAnoDeLancamento(2003);
         filmeBreno.avalia(10);
@@ -66,5 +67,9 @@ public class Principal {
         listaDeFilmes.add(filmeBreno);
         System.out.println("Tamanho da lista: " + listaDeFilmes.size());
         System.out.println("Primeiro Filme: " + listaDeFilmes.get(0).getNome());
+        System.out.println(listaDeFilmes);
+        System.out.println("toString do filme " + listaDeFilmes.get(0).toString());
+
+        
     }
 }
