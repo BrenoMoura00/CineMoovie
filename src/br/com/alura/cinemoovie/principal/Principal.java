@@ -1,4 +1,4 @@
-package br.com.alura.cinemoovie;
+package br.com.alura.cinemoovie.principal;
 
 import br.com.alura.cinemoovie.calculos.CalculadoraDeTempo;
 import br.com.alura.cinemoovie.calculos.FiltroRecomendacao;
